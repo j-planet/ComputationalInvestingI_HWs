@@ -13,9 +13,7 @@ Cumulative return of the total portfolio
 from datetime import datetime, timedelta
 import pandas as pd
 import sys
-from utilities import getPrices, calculateMetrics
-import matplotlib.pyplot as plt
-
+from utilities import analyze
 
 def readPriceData(fname):
     """ Read orders data from csv of format y | m | d | value
@@ -28,31 +26,6 @@ def readPriceData(fname):
     dates = df.apply(lambda row: datetime(int(row['y']), int(row['m']), int(row['d'])), axis=1)
 
     return pd.Series(df['value'], index=dates)
-
-
-def analyze(prices, marketSymbol, plotFname=None, verbosity=2):
-    """
-    Calulates and prints metrics & a plot of the portfolio and given marketSymbol.
-    @param prices: a time Series
-    @param marketSymbol
-    @param plotFname: if None (default) the plot will be displayed on screen, otherwise saved as a pdf as given file name
-    """
-
-    marketPrices = getPrices(prices.index[0], prices.index[-1], [marketSymbol], 'close')[marketSymbol]
-
-    # metrics
-    print '============= PORTFOLIO ============='
-    calculateMetrics(prices, verbosity=max(verbosity, 1))
-    print '\n============= MARKET EQUITY ============='
-    calculateMetrics(marketPrices, verbosity=max(verbosity, 1))
-
-    # plot
-    pd.DataFrame({'Market': marketPrices / marketPrices[0] * prices[0], 'Portfolio': prices}).plot(title='Comparison of Historical Prices')
-
-    if plotFname is None:
-        plt.show()
-    else:
-        plt.savefig(plotFname, format='pdf')
 
 
 if __name__ == '__main__':

@@ -13,36 +13,7 @@ from QSTK.qstkstudy.EventProfiler import eventprofiler
 
 rootDir = r'C:\Users\jjin\Google Drive\qstk\assignments\hw2'
 
-
-def find_crossing_threshold_events(data, threshold, symbols=None):
-    """
-    Finds the event data frame.
-    The event is defined as when the ACTUAL close of the stock price drops below $5.00,
-    more specifically, when:
-        price[t-1] >= threshold
-        price[t] < threshold
-    an event has occurred on date t.
-    @param threshold: the crossing of which triggers an event
-    """
-
-    print '--- Finding Events:'
-
-    res = deepcopy(data) * np.NAN   # create an empty dataframe
-    timeStamps = data.index         # time stamps for the event range
-
-    if symbols is None:
-        symbols = data.columns
-
-    for symbol in symbols:
-        for t in range(1, len(timeStamps)):
-
-            price_yesterday = data[symbol].ix[timeStamps[t - 1]]
-            price_today = data[symbol].ix[timeStamps[t]]
-
-            if price_today < threshold <= price_yesterday:
-                res[symbol].ix[timeStamps[t]] = 1
-
-    return res
+from utilities import find_crossing_threshold_events
 
 
 def fillNA(data):

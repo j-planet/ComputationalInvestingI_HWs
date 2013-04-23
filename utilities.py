@@ -4,11 +4,127 @@ from QSTK.qstkutil.qsdateutil import getNYSEdays
 from QSTK.qstkutil.DataAccess import DataAccess
 from QSTK.qstkutil.tsutil import returnize0
 
+import matplotlib.pyplot as plt
 from datetime import timedelta
-from copy import copy
+from copy import copy, deepcopy
 import numpy as np
 import pandas as pd
 
+
+def analyze(prices, marketSymbol, plotFname=None, verbosity=2):
+    """
+    Calulates and prints metrics & a plot of the portfolio and given marketSymbol.
+    @param prices: a time Series
+    @param marketSymbol
+    @param plotFname: if None (default) the plot will be displayed on screen, otherwise saved as a pdf as given file name
+    """
+
+    marketPrices = getPrices(prices.index[0], prices.index[-1], [marketSymbol], 'close')[marketSymbol]
+
+    # metrics
+    print '============= PORTFOLIO ============='
+    calculateMetrics(prices, verbosity=max(verbosity, 1))
+    print '\n============= MARKET EQUITY ============='
+    calculateMetrics(marketPrices, verbosity=max(verbosity, 1))
+
+    # plot
+    pd.DataFrame({'Market': marketPrices / marketPrices[0] * prices[0], 'Portfolio': prices}).plot(title='Comparison of Historical Prices')
+
+    if plotFname is None:
+        plt.show()
+    else:
+        plt.savefig(plotFname, format='pdf')
+
+
+def marketsim(ordersData, initialInvestment, verbose=True):
+    """
+    Compute portfolio given stock trading activity and initial invested amount
+    @param ordersData: of the format
+                            symbol  numShares
+                2008-12-03   AAPL        130
+                2008-12-05    IBM         50
+                2008-12-08   AAPL       -130
+    @param initialInvestment: a scalar
+    @return portfolio value in a timeSeries
+    """
+
+    ordersData = ordersData.sort_index()    # sort by date
+
+    if verbose:
+        print '\nordersData:\n', ordersData
+
+    # --- read relevant data ---
+    startDate = ordersData.index[0]
+    endDate = ordersData.index[-1]
+    symbols = ordersData['symbol'].unique()     # find symbols
+
+    pricesDF = getPrices(startDate, endDate, symbols, 'close')
+
+    # --- get the number of shares of each stock on each day ---
+    numSharesDF = ordersData.copy()
+    numSharesDF['date'] = numSharesDF.index
+    numSharesDF = numSharesDF.pivot_table(rows=['date'], cols=['symbol'], values='numShares')
+    if verbose:
+        print '\nNumber of shares traded:\n', numSharesDF
+
+    # number of shares of each symbol at the BEGINNING of the day
+    numSharesDF = numSharesDF.reindex(index=pricesDF.index).fillna(0).cumsum()    # expand index
+    numSharesDF.ix[1:] = numSharesDF.ix[0:-1]
+    numSharesDF.ix[0] = 0
+    if verbose:
+        print '\nNumber of shares held at the beginning of the day:\n', numSharesDF
+
+    # calculate portfolio value
+    priceChanges = numSharesDF * pricesDF.diff()
+
+    if verbose:
+        print '\npriceChanges for each stock:\n', priceChanges
+
+    priceChanges = priceChanges.sum(axis=1).fillna(0)
+
+    portfolioValue = priceChanges.cumsum() + initialInvestment
+
+    if verbose:
+        print '------ Orders ------'
+        print ordersData.to_string()
+        print '\n------ Stock Prices ------'
+        print pricesDF.to_string()
+        print '\n------ Trade Book ------'
+        print numSharesDF.to_string()
+        print '\n------ Portfolio Balances ------'
+        print portfolioValue.to_string()
+
+    return portfolioValue
+
+def find_crossing_threshold_events(data, threshold, symbols=None):
+    """
+    Finds the event data frame.
+    The event is defined as when the ACTUAL close of the stock price drops below $5.00,
+    more specifically, when:
+        price[t-1] >= threshold
+        price[t] < threshold
+    an event has occurred on date t.
+    @param threshold: the crossing of which triggers an event
+    """
+
+    print '--- Finding Events:'
+
+    res = deepcopy(data) * np.NAN   # create an empty dataframe
+    timeStamps = data.index         # time stamps for the event range
+
+    if symbols is None:
+        symbols = data.columns
+
+    for symbol in symbols:
+        for t in range(1, len(timeStamps)):
+
+            price_yesterday = data[symbol].ix[timeStamps[t - 1]]
+            price_today = data[symbol].ix[timeStamps[t]]
+
+            if price_today < threshold <= price_yesterday:
+                res[symbol].ix[timeStamps[t]] = 1
+
+    return res
 
 def fillNA(data):
     """
@@ -77,3 +193,66 @@ def calculateMetrics(prices, verbosity=2):
         print 'Average daily returns =', avgDailyRets
 
     return stdDailyRets, avgDailyRets, sharpeRatio, cumRet
+
+
+def createBollingerEventFilter(prices, lookBackPeriod, numOfStds, verbose=False):
+
+    # compute indicators
+    means = pd.rolling_mean(prices, lookBackPeriod)
+    stds = pd.rolling_std(prices, lookBackPeriod)
+    lowerBand = means - numOfStds * stds
+    upperBand = means + numOfStds * stds
+
+    bollingerVals = (prices - means) / (numOfStds * stds)
+
+    # ----- create event filter -----
+    eventFilter = deepcopy(bollingerVals)
+    buyInd = eventFilter <= -1
+    sellInd = eventFilter >= 1
+    eventFilter[buyInd] = -1
+    eventFilter[sellInd] = 1
+    eventFilter[-(buyInd | sellInd)] = np.NAN
+
+    if verbose:
+        print '------bollingerVals:'
+        print bollingerVals
+
+        print '------eventfilter:'
+        print eventFilter
+
+    buyDates = dict([(symbol, eventFilter.index[buyInd[symbol].values.flatten()]) for symbol in eventFilter.columns])
+    sellDates = dict([(symbol, eventFilter.index[sellInd[symbol].values.flatten()]) for symbol in eventFilter.columns])
+
+    return eventFilter, bollingerVals, means, stds, lowerBand, upperBand, buyDates, sellDates
+
+
+def plotBollingerBands(prices, means, lowerBand, upperBand, title, bollingerVals, buyDates, sellDates, filename=None):
+    plt.figure(figsize=(15, 8))
+
+    # subplot1: prices and bands
+    subplot1 = plt.subplot(2, 1, 1)
+    plt.plot(prices.index, prices.values, 'b', label='Price', linewidth=1)
+    plt.plot(means.index, means.values, 'g--', label='Rolling Mean')
+    plt.fill_between(lowerBand.index, lowerBand.values.flatten(), upperBand.values.flatten(), facecolor='grey', alpha=0.2, edgecolor = None)
+    plt.legend()
+
+    plt.title(title)
+
+    # subplot2: bollinger indicators
+    subplot2 = plt.subplot(2, 1, 2)
+    plt.plot(bollingerVals.index, bollingerVals.values)
+    plt.fill_between(bollingerVals.index, -1, 1, facecolor='grey', alpha=0.2, edgecolor=None)
+
+    # add vertical lines
+    for d in buyDates:
+        subplot1.axvline(d, color='g')
+        subplot2.axvline(d, color='g')
+
+    for d in sellDates:
+        subplot1.axvline(d, color='r')
+        subplot2.axvline(d, color='r')
+
+    if filename is None:
+        plt.show()
+    else:
+        plt.savefig(filename, format='pdf')

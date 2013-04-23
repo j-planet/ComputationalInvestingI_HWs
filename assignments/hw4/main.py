@@ -9,12 +9,9 @@ import pandas as pd
 
 from QSTK.qstkstudy.EventProfiler import eventprofiler
 
-sys.path.append('C:\\Users\\jjin\\Google Drive\\qstk\\assignments')
+# sys.path.append('C:\\Users\\jjin\\Google Drive\\qstk\\assignments')
 
-from assignments.hw2.hw2 import find_crossing_threshold_events
-from assignments.hw3.marketsim import marketsim
-from assignments.hw3.analyze import analyze
-from utilities import getPrices
+from utilities import getPrices, find_crossing_threshold_events, marketsim, analyze
 
 
 def graphStrategies(eventMaker, startDate, endDate, symbols, marketSymbol, fieldName, isSymbolsList, holdingPeriodsToTry,
