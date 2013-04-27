@@ -18,7 +18,6 @@ if __name__ == '__main__':
     bollingerVals, means, stds, lowerBand, upperBand = calculateBollingerValues(prices, lookBackPeriod, numOfStds, verbose=False)
     _, _, buyDates, sellDates = createBollingerEventFilter(bollingerVals, {'type': 'SIMPLE_CROSS', 'upperVal': 1, 'lowerVal': -1}, verbose=False)
 
-
     # ----- plot -----
     for symbol in symbols:
         title = symbol + ': ' + str(numOfStds) + '-stds Bollinger Bands'
