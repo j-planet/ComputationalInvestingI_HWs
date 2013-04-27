@@ -135,7 +135,7 @@ def fillNA(data):
     return data.fillna(method='ffill').fillna(method='bfill').fillna(1.0)
 
 
-def getPrices(startDate, endDate, symbols, fields, fillna=True, isSymbolsList=False, includeLastDay=True):
+def getPrices(startDate, endDate, symbols, fields, fillna=True, isSymbolsList=False, includeLastDay=True, additionalSymbol=None):
     """
      reads stock prices from Yahoo
      the prices returned INCLUDE the endDate
@@ -155,6 +155,9 @@ def getPrices(startDate, endDate, symbols, fields, fillna=True, isSymbolsList=Fa
 
     if isSymbolsList:
         symbols = dataReader.get_symbols_from_list(symbols if isinstance(symbols, str) else symbols[0])
+
+    if additionalSymbol is not None:
+        symbols += [additionalSymbol] if isinstance(additionalSymbol, str) else additionalSymbol
 
     data = dataReader.get_data(timeStamps, symbols, fields)
 
@@ -195,7 +198,10 @@ def calculateMetrics(prices, verbosity=2):
     return stdDailyRets, avgDailyRets, sharpeRatio, cumRet
 
 
-def createBollingerEventFilter(prices, lookBackPeriod, numOfStds, verbose=False):
+def calculateBollingerValues(prices, lookBackPeriod, numOfStds, verbose=False):
+    """
+    @returns bollingerVals, means, stds, lowerBand, upperBand
+    """
 
     # compute indicators
     means = pd.rolling_mean(prices, lookBackPeriod)
@@ -205,25 +211,89 @@ def createBollingerEventFilter(prices, lookBackPeriod, numOfStds, verbose=False)
 
     bollingerVals = (prices - means) / (numOfStds * stds)
 
-    # ----- create event filter -----
-    eventFilter = deepcopy(bollingerVals)
-    buyInd = eventFilter <= -1
-    sellInd = eventFilter >= 1
-    eventFilter[buyInd] = -1
-    eventFilter[sellInd] = 1
-    eventFilter[-(buyInd | sellInd)] = np.NAN
-
     if verbose:
         print '------bollingerVals:'
         print bollingerVals
 
-        print '------eventfilter:'
-        print eventFilter
+    return bollingerVals, means, stds, lowerBand, upperBand
 
-    buyDates = dict([(symbol, eventFilter.index[buyInd[symbol].values.flatten()]) for symbol in eventFilter.columns])
-    sellDates = dict([(symbol, eventFilter.index[sellInd[symbol].values.flatten()]) for symbol in eventFilter.columns])
 
-    return eventFilter, bollingerVals, means, stds, lowerBand, upperBand, buyDates, sellDates
+def createBollingerEventFilter(bollingerVals, typeAndParams, verbose=False):
+    """
+    creates an event filter according to Bollinger indicators
+    @param bollingerVals: the bollinger indicators: (prices - mean)/(num of stds * std)
+    @param typeAndParams: a dict of the type of event filter to create and their parameters. Of the format {'type':..., ...}
+        'SIMPLE_CROSS':
+            when bollingerVals cross a certain value (specified as 'upperVal' and 'lowerVal')
+            buy: when lowerVal is reached
+            sell: when upperVal is reached
+            returns buyEventFilter, sellEventFilter, buyDates and sellDates
+
+        'CROSS_WRT_MARKET_FALL':
+            typeAndParams has 'type', 'bolBenchMark', 'marketBenchMark', 'marketSymbol', 'lookBackPeriod', 'numOfStds'
+            Bollinger value for the equity yesterday >= bolBenchMark
+            Bollinger value for the equity today <= bolBenchMark
+            Bollinger value for marketSymbol today >= marketBenchMark
+            returns eventFilter, actionDates
+    """
+
+    allDates = bollingerVals.index
+    allSymbols = bollingerVals.columns
+
+    if typeAndParams['type'] == 'CROSS_WRT_MARKET_FALL':
+        bolBenchMark = typeAndParams['bolBenchMark']
+        marketBenchMark = typeAndParams['marketBenchMark']
+
+        # get market bollinger values
+        marketPrices = getPrices(bollingerVals.index[0], bollingerVals.index[-1], [typeAndParams['marketSymbol']], 'close')
+        marketBV, _, _, _, _ = calculateBollingerValues(marketPrices, typeAndParams['lookBackPeriod'], typeAndParams['numOfStds'])
+
+        # look at all criteria
+        yesterdayInd = (bollingerVals >= bolBenchMark)
+        yesterdayInd.values[1:] = yesterdayInd.values[0:-1] # note: we don't care about the first lookBackPeriod values
+        todayInd = (bollingerVals <= bolBenchMark)
+        marketInd = marketBV >= marketBenchMark
+        eventInd = todayInd & yesterdayInd & np.repeat(marketInd.values, len(allSymbols), axis=1)
+
+        # make the event filter
+        eventFilter = deepcopy(bollingerVals) * np.NAN
+        eventFilter[eventInd] = 1
+
+        # get dates on which the eventFilter is 1
+        actionDates = dict([(symbol, allDates[eventInd[symbol]]) for symbol in allSymbols])
+
+        if verbose:
+            print '------- eventFilter:\n', eventFilter
+            print '------- actionDates:\n', actionDates
+
+        return eventFilter, actionDates
+
+    elif typeAndParams['type'] == 'SIMPLE_CROSS':
+        upperVal = typeAndParams['upperVal']
+        lowerVal = typeAndParams['lowerVal']
+
+        buyInd = bollingerVals <= lowerVal
+        sellInd = bollingerVals >= upperVal
+
+        # create filters
+        buyEventFilter = deepcopy(bollingerVals) * np.NAN
+        sellEventFilter = deepcopy(bollingerVals) * np.NAN
+        buyEventFilter[buyInd] = 1
+        sellEventFilter[sellInd] = 1
+
+        # create buy and sell dates
+        buyDates = dict([(symbol, allDates[buyInd[symbol].values.flatten()]) for symbol in allSymbols])
+        sellDates = dict([(symbol, allDates[sellInd[symbol].values.flatten()]) for symbol in allSymbols])
+
+        if verbose:
+            print '------- buyEventFilter:\n', buyEventFilter
+            print '------- sellEventFilter:\n', sellEventFilter
+            print '------- buyDates:\n', buyDates
+            print '------- sellDates:\n', sellDates
+
+        return buyEventFilter, sellEventFilter, buyDates, sellDates
+
+    raise 'Invalid type %s' % typeAndParams['type']
 
 
 def plotBollingerBands(prices, means, lowerBand, upperBand, title, bollingerVals, buyDates, sellDates, filename=None):

@@ -2,7 +2,7 @@ __author__ = 'jjin'
 
 from datetime import datetime
 
-from utilities import getPrices, createBollingerEventFilter, plotBollingerBands
+from utilities import getPrices, calculateBollingerValues, createBollingerEventFilter, plotBollingerBands
 
 
 if __name__ == '__main__':
@@ -15,10 +15,12 @@ if __name__ == '__main__':
     # ----- compute prices and Bollinger stuff -----
     prices = getPrices(startDate, endDate, symbols, 'close')
 
-    eventFilter, bollingerVals, means, _, lowerBand, upperBand, buyDates, sellDates = createBollingerEventFilter(prices, lookBackPeriod, numOfStds)
+    bollingerVals, means, stds, lowerBand, upperBand = calculateBollingerValues(prices, lookBackPeriod, numOfStds, verbose=False)
+    _, _, buyDates, sellDates = createBollingerEventFilter(bollingerVals, {'type': 'SIMPLE_CROSS', 'upperVal': 1, 'lowerVal': -1}, verbose=False)
+
 
     # ----- plot -----
-    for symbol in eventFilter.columns:
+    for symbol in symbols:
         title = symbol + ': ' + str(numOfStds) + '-stds Bollinger Bands'
         filename = "%s_%dlookback_%dstds_%s-%s.pdf" % (symbol, lookBackPeriod, numOfStds, str(startDate.date()), str(endDate.date()))
 

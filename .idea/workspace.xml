@@ -2,38 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d937b25f-9782-426a-82cc-a70ee5d1a88c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/hw4/5days.pdf" afterPath="$PROJECT_DIR$/assignments/hw4/5days.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EventProfiler/SP500port.csv" afterPath="$PROJECT_DIR$/EventProfiler/SP500port.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basic/allsyms.csv" afterPath="$PROJECT_DIR$/Basic/allsyms.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KNN/data-classification-prob.csv" afterPath="$PROJECT_DIR$/KNN/data-classification-prob.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KNN/data-ripple-prob.csv" afterPath="$PROJECT_DIR$/KNN/data-ripple-prob.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KNN/data1.csv" afterPath="$PROJECT_DIR$/KNN/data1.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KNN/data2.csv" afterPath="$PROJECT_DIR$/KNN/data2.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basic/example-syms.csv" afterPath="$PROJECT_DIR$/Basic/example-syms.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basic/getnames" afterPath="$PROJECT_DIR$/Basic/getnames" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basic/tutorial3portfolio.csv" afterPath="$PROJECT_DIR$/Basic/tutorial3portfolio.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FeatureSearch/2008Dow30.txt" afterPath="$PROJECT_DIR$/FeatureSearch/2008Dow30.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FeatureSearch/2010Dow30.txt" afterPath="$PROJECT_DIR$/FeatureSearch/2010Dow30.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Validation.py" afterPath="$PROJECT_DIR$/Validation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/hw3/analyze.py" afterPath="$PROJECT_DIR$/assignments/hw3/analyze.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FeatureSearch/code.py" afterPath="$PROJECT_DIR$/FeatureSearch/code.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Features/featuretest.py" afterPath="$PROJECT_DIR$/Features/featuretest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FeatureSearch/functions.py" afterPath="$PROJECT_DIR$/FeatureSearch/functions.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/hw2/hw2.py" afterPath="$PROJECT_DIR$/assignments/hw2/hw2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/hw4/main.py" afterPath="$PROJECT_DIR$/assignments/hw4/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/hw3/marketsim.py" afterPath="$PROJECT_DIR$/assignments/hw3/marketsim.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basic/plot2ddata.py" afterPath="$PROJECT_DIR$/Basic/plot2ddata.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FeatureSearch/runs.txt" afterPath="$PROJECT_DIR$/FeatureSearch/runs.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Features/symbols.txt" afterPath="$PROJECT_DIR$/Features/symbols.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EventProfiler/tutorial.py" afterPath="$PROJECT_DIR$/EventProfiler/tutorial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basic/tutorial1.py" afterPath="$PROJECT_DIR$/Basic/tutorial1.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basic/tutorial2.py" afterPath="$PROJECT_DIR$/Basic/tutorial2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basic/tutorial5.py" afterPath="$PROJECT_DIR$/Basic/tutorial5.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basic/tutorial6.py" afterPath="$PROJECT_DIR$/Basic/tutorial6.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basic/tutorial7.py" afterPath="$PROJECT_DIR$/Basic/tutorial7.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basic/tutorial8.py" afterPath="$PROJECT_DIR$/Basic/tutorial8.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assignments/hw6/hw6.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/hw5/AAPL_20lookback_2stds_2010-01-01-2010-12-31.pdf" afterPath="$PROJECT_DIR$/assignments/hw5/AAPL_20lookback_2stds_2010-01-01-2010-12-31.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/hw5/GOOG_20lookback_2stds_2010-01-01-2010-12-31.pdf" afterPath="$PROJECT_DIR$/assignments/hw5/GOOG_20lookback_2stds_2010-01-01-2010-12-31.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/hw5/IBM_20lookback_2stds_2010-01-01-2010-12-31.pdf" afterPath="$PROJECT_DIR$/assignments/hw5/IBM_20lookback_2stds_2010-01-01-2010-12-31.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/hw5/MSFT_20lookback_2stds_2010-01-01-2010-12-31.pdf" afterPath="$PROJECT_DIR$/assignments/hw5/MSFT_20lookback_2stds_2010-01-01-2010-12-31.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/hw5/hw5.py" afterPath="$PROJECT_DIR$/assignments/hw5/hw5.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utilities.py" afterPath="$PROJECT_DIR$/utilities.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="qstk.iws" />
@@ -42,21 +17,22 @@
     <file path="$PROJECT_DIR$/../Kaggle/GA_JJ.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1362637321062" ignored="false" />
     <file path="$PROJECT_DIR$/../Kaggle/GradientBoost_JJ.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1362637321062" ignored="false" />
     <file path="$PROJECT_DIR$/../Kaggle/utilities.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1362637321062" ignored="false" />
-    <file path="/Python Console" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1366742351801" ignored="false" />
+    <file path="/Python Console" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1367022580919" ignored="false" />
     <file path="/main.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1366673900111" ignored="false" />
     <file path="/fragment.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1365134281037" ignored="false" />
     <file path="/tutorial8.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1364274397123" ignored="false" />
     <file path="/hw2.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1366673775952" ignored="false" />
-    <file path="/EventProfiler.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1365140022404" ignored="false" />
+    <file path="/EventProfiler.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1367023334227" ignored="false" />
     <file path="/Pandas practice.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1364600625146" ignored="false" />
     <file path="/marketsim.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1366673819946" ignored="false" />
     <file path="/utility.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1364612127973" ignored="false" />
     <file path="/analyze.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1366673874318" ignored="false" />
     <file path="/__init__.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1365026513738" ignored="false" />
-    <file path="/utilities.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1366673844790" ignored="false" />
+    <file path="/utilities.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1367023532459" ignored="false" />
     <file path="/README.md" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1365895630413" ignored="false" />
-    <file path="/hw5.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1366742990530" ignored="false" />
-    <file path="/Dummy.txt" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1366683594625" ignored="false" />
+    <file path="/hw5.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1367020100713" ignored="false" />
+    <file path="/Dummy.txt" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1367017493794" ignored="false" />
+    <file path="/hw6.py" changelist="d937b25f-9782-426a-82cc-a70ee5d1a88c" time="1367024028126" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,23 +47,14 @@
     <disable_hints />
   </component>
   <component name="DockManager">
-    <window id="1">
+    <window id="4">
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/assignments/hw4/main.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state line="137" column="0" selection-start="5888" selection-end="5888" vertical-scroll-proportion="0.0">
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
             <file leaf-file-name="utilities.py" pinned="false" current="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/utilities.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+                  <state line="160" column="0" selection-start="5524" selection-end="5524" vertical-scroll-proportion="0.49466193">
                     <folding>
                       <element signature="e#21#69#0" expanded="true" />
                     </folding>
@@ -103,12 +70,32 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="hw5.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assignments/hw5/hw5.py">
+      <file leaf-file-name="hw6.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assignments/hw6/hw6.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.5243179">
+            <state line="23" column="64" selection-start="896" selection-end="896" vertical-scroll-proportion="0.46381968">
               <folding>
                 <element signature="e#21#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventProfiler.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/site-packages/QSTK/qstkstudy/EventProfiler.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="21" selection-start="501" selection-end="501" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hw2.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assignments/hw2/hw2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="57" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#59#77#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,6 +112,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLogSettings">
+    <option name="myStructureFilterPaths" />
     <option name="myDateState">
       <MyDateState />
     </option>
@@ -132,13 +120,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/assignments/hw3/main.py" />
         <option value="$PROJECT_DIR$/assignments/hw1/hw1.py" />
         <option value="$PROJECT_DIR$/assignments/hw3/__init__.py" />
         <option value="$PROJECT_DIR$/assignments/hw2/__init__.py" />
         <option value="$PROJECT_DIR$/assignments/__init__.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
-        <option value="C:/Python27/Lib/site-packages/QSTK/qstkstudy/EventProfiler.py" />
         <option value="$PROJECT_DIR$/assignments/challenge/main.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/assignments/hw5/main.py" />
@@ -146,8 +132,10 @@
         <option value="$PROJECT_DIR$/assignments/hw3/marketsim.py" />
         <option value="$PROJECT_DIR$/assignments/hw3/analyze.py" />
         <option value="$PROJECT_DIR$/assignments/hw4/main.py" />
-        <option value="$PROJECT_DIR$/utilities.py" />
         <option value="$PROJECT_DIR$/assignments/hw5/hw5.py" />
+        <option value="C:/Python27/Lib/site-packages/QSTK/qstkstudy/EventProfiler.py" />
+        <option value="$PROJECT_DIR$/utilities.py" />
+        <option value="$PROJECT_DIR$/assignments/hw6/hw6.py" />
       </list>
     </option>
   </component>
@@ -183,6 +171,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -229,7 +218,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="hw5" />
+              <option name="myItemId" value="hw6" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -247,7 +236,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="hw4" />
+              <option name="myItemId" value="hw5" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -269,37 +258,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qstk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ComputationalInvestingI_HWs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assignments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="challenge" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../computational photography/assignments" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -317,26 +287,7 @@
       <recent name="C:\Users\jjin\Google Drive\qstk" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.hw5">
-    <configuration default="false" name="analyze" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/assignments/hw3" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <module name="qstk" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/assignments/hw3/analyze.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PyDebugRunner" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.hw6">
     <configuration default="false" name="hw1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -407,6 +358,25 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
+    <configuration default="false" name="hw6" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/assignments/hw6" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="qstk" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/assignments/hw6/hw6.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -462,19 +432,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.analyze" />
-      <item index="1" class="java.lang.String" itemvalue="Python.hw1" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Validation" />
-      <item index="3" class="java.lang.String" itemvalue="Python.main" />
-      <item index="4" class="java.lang.String" itemvalue="Python.hw5" />
+      <item index="0" class="java.lang.String" itemvalue="Python.hw1" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Validation" />
+      <item index="2" class="java.lang.String" itemvalue="Python.main" />
+      <item index="3" class="java.lang.String" itemvalue="Python.hw5" />
+      <item index="4" class="java.lang.String" itemvalue="Python.hw6" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.hw5" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main" />
+        <item index="0" class="java.lang.String" itemvalue="Python.hw6" />
+        <item index="1" class="java.lang.String" itemvalue="Python.hw5" />
         <item index="2" class="java.lang.String" itemvalue="Python.main" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Validation" />
-        <item index="4" class="java.lang.String" itemvalue="Python.hw1" />
+        <item index="3" class="java.lang.String" itemvalue="Python.main" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Validation" />
       </list>
     </recent_temporary>
   </component>
@@ -509,17 +479,17 @@
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Documentation" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2264382" sideWeight="0.589183" order="1" side_tool="false" content_ui="tabs" x="471" y="168" width="775" height="840" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2264382" sideWeight="0.589183" order="0" side_tool="false" content_ui="tabs" x="471" y="168" width="775" height="840" />
+      <window_info id="Changes" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25703794" sideWeight="0.4027618" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24984577" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25642595" sideWeight="0.589183" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25703794" sideWeight="0.4027618" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25703794" sideWeight="0.589183" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41081703" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299566" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298731" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.73733807" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-613" y="44" width="610" height="951" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.73733807" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-654" y="35" width="610" height="951" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -583,20 +553,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="13" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assignments/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/copy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="4" selection-start="3993" selection-end="3993" vertical-scroll-proportion="0.33252722" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignments/hw3/orders.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="0" selection-start="341" selection-end="341" vertical-scroll-proportion="-9.52" />
@@ -633,11 +593,6 @@
         <state line="4" column="13" selection-start="181" selection-end="181" vertical-scroll-proportion="0.078071184" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/hw2/hw2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="439" selection-end="439" vertical-scroll-proportion="0.3234245" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignments/hw3/marketsim.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="0" selection-start="311" selection-end="311" vertical-scroll-proportion="0.21469575" />
@@ -655,32 +610,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/hw4/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="0" selection-start="5888" selection-end="5888" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="137" column="0" selection-start="5888" selection-end="5888" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/challenge/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="4" selection-start="2090" selection-end="2132" vertical-scroll-proportion="0.8386714">
+        <state line="60" column="4" selection-start="2090" selection-end="2132" vertical-scroll-proportion="0.8386714" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/hw5/hw5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="1210" selection-end="1210" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#19#44#0" expanded="false" />
+            <element signature="e#21#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/hw2/hw2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="57" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#59#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/QSTK/qstkstudy/EventProfiler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="21" selection-start="501" selection-end="501" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utilities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="160" column="0" selection-start="5524" selection-end="5524" vertical-scroll-proportion="0.49466193">
           <folding>
             <element signature="e#21#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/hw5/hw5.py">
+    <entry file="file://$PROJECT_DIR$/assignments/hw6/hw6.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.5243179">
+        <state line="23" column="64" selection-start="896" selection-end="896" vertical-scroll-proportion="0.46381968">
           <folding>
             <element signature="e#21#50#0" expanded="true" />
           </folding>
