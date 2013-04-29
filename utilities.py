@@ -172,9 +172,10 @@ def getPrices(startDate, endDate, symbols, fields, fillna=True, isSymbolsList=Fa
     return data
 
 
-def calculateMetrics(prices, verbosity=2):
+def calculateMetrics(prices, verbosity=2, saveIntermediateResults=False, outputDir='.'):
     """ Compute metrics of a series of prices
      @param prices: a series of prices. the dates are assumed consecutive and in increasing order
+     @param saveIntermediateResults: if true, outputs portfolio values and daily returns to csv files
      @return stdDailyRets, avgDailyRets, sharpeRatio, cumRet
     """
 
@@ -197,6 +198,10 @@ def calculateMetrics(prices, verbosity=2):
         print 'Total return =', cumRet
         print 'Standard deviation of daily returns =', stdDailyRets
         print 'Average daily returns =', avgDailyRets
+
+    if saveIntermediateResults:
+        prices.to_csv(os.path.join(outputDir, 'prices.csv'))
+        dailyReturns.to_csv(os.path.join(outputDir, 'dailyReturns.csv'))
 
     return stdDailyRets, avgDailyRets, sharpeRatio, cumRet
 
